@@ -69,3 +69,19 @@ let controlElevation = L.control.elevation({
 }).addTo(map);
 controlElevation.load("data/12.gpx");
 
+let pulldown = document.querySelector("#pulldown"); //Styling PullDown Menu
+
+for (let etappe of ETAPPEN) {
+    let status = "";
+    if (etappe.nr == 12){
+        status = " selected ";   //Anzeige der aktuellen Etappe
+    }
+    pulldown.innerHTML += `<option ${status} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>`;
+}
+
+pulldown.onchange = function (evt) {
+    let username = evt.target.value;
+    let url = `https://${username}.github.io/biketirol`;
+    window.location.href = url;
+}
+
