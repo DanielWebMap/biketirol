@@ -57,3 +57,15 @@ L.control.layers({
 L.control.scale({
     imperial: false,
 }).addTo(map);
+
+
+// Neue Inhalte der verpassten Stunde
+
+let controlElevation = L.control.elevation({
+    time: false,
+    elevationDiv: "#profile",
+    height: 300,
+    theme: "bike-tirol",
+}).addTo(map);
+controlElevation.load("data/12.gpx");
+
