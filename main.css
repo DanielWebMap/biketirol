@@ -69,8 +69,14 @@ footer nav {
 #profile {
     margin-top: 0.3em;
     border: 1px solid gray;
+    fill: "#dbead5"
+}
+
+.elevation-control .background {
+fill:  black;
 }
 
 #pulldown {
     margin-bottom: 0.3em
 }
+
